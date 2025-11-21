@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Forever Living</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Initialize EmailJS with Public Key
+            emailjs.init("WGuJrf10frXPIphVt");
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Forever<span style="color: var(--primary-color);">Living</span></a>
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-icons">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section" style="padding-top: 120px; padding-bottom: 80px;">
+        <div class="container">
+            <h1 class="fade-in" style="margin-bottom: 40px; text-align: center;">Checkout</h1>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start;">
+
+                <!-- Cart Summary -->
+                <div class="cart-summary fade-in" style="background-color: #f9f9f9; padding: 30px; border-radius: 8px;">
+                    <h2 style="margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px;">Your Cart</h2>
+                    <div id="cart-items">
+                        <!-- Cart items injected by JS -->
+                        <p>Your cart is empty.</p>
+                    </div>
+                    <div
+                        style="border-top: 2px solid #ddd; margin-top: 20px; padding-top: 20px; display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
+                        <span>Total:</span>
+                        <span id="cart-total">€0.00</span>
+                    </div>
+                </div>
+
+                <!-- Checkout Form -->
+                <div class="checkout-form fade-in">
+                    <h2 style="margin-bottom: 20px;">Shipping Details</h2>
+                    <form id="checkout-form">
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Full Name</label>
+                            <input type="text" id="name" required
+                                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Email Address</label>
+                            <input type="email" id="email" required
+                                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Phone Number</label>
+                            <input type="tel" id="phone" required
+                                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Address</label>
+                            <input type="text" id="address" required
+                                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">City</label>
+                            <input type="text" id="city" required
+                                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Postal Code</label>
+                            <input type="text" id="zip" required
+                                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                        </div>
+
+                        <button type="submit" class="btn" style="width: 100%;">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Forever Living</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Forever Living Products. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Checkout specific logic
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCart();
+
+            const form = document.getElementById('checkout-form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                processCheckout();
+            });
+        });
+
+        function renderCart() {
+            const cartContainer = document.getElementById('cart-items');
+            const totalElement = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                totalElement.textContent = '€0.00';
+                return;
+            }
+
+            let total = 0;
+            cartContainer.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                return `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: contain; background: #fff;">
+                            <div>
+                                <h4 style="margin: 0;">${item.name}</h4>
+                                <p style="margin: 0; color: #777; font-size: 0.9rem;">€${item.price.toFixed(2)} x ${item.quantity}</p>
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="font-weight: bold;">€${itemTotal.toFixed(2)}</p>
+                            <button onclick="removeFromCart(${item.id})" style="background: none; border: none; color: red; cursor: pointer; font-size: 0.8rem;">Remove</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            totalElement.textContent = '€' + total.toFixed(2);
+        }
+
+        function processCheckout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+
+            const btn = document.querySelector('#checkout-form button[type="submit"]');
+            const originalText = btn.innerText;
+            btn.innerText = "Processing...";
+            btn.disabled = true;
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const zip = document.getElementById('zip').value;
+
+            let total = 0;
+            const orderDetails = cart.map(item => {
+                total += item.price * item.quantity;
+                return `${item.name} (x${item.quantity}): €${(item.price * item.quantity).toFixed(2)}`;
+            }).join('\n');
+
+            // EmailJS Parameters
+            const templateParams = {
+                customer_name: name,
+                customer_email: email,
+                customer_phone: phone,
+                shipping_address: `${address}, ${city}, ${zip}`,
+                order_details: orderDetails,
+                total_amount: total.toFixed(2)
+            };
+
+            // SERVICE ID: service_29s0ufb
+            // TEMPLATE ID: template_br0rv0d
+            emailjs.send("service_29s0ufb", "template_br0rv0d", templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert("Order placed successfully!");
+
+                    // Clear cart
+                    localStorage.removeItem('foreverCart');
+                    cart = [];
+                    updateCartCount();
+                    renderCart();
+
+                    // Reset button
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+
+                    // Optional: Redirect
+                    // window.location.href = "index.html";
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    alert("Failed to send order. Please try again. Error: " + JSON.stringify(error));
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                });
+        }
+    </script>
+</body>
+
+</html>

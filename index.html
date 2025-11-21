@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever Living | The Aloe Vera Company</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- FontAwesome Placeholder - You might need a real kit code or CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Forever<span style="color: var(--primary-color);">Living</span></a>
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-icons">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero"
+        style="height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/hero-bg.jpg') no-repeat center center/cover; color: white; text-align: center;">
+        <div class="container fade-in">
+            <h1 style="font-size: 4rem; margin-bottom: 20px;">Look Better. Feel Better.</h1>
+            <p style="font-size: 1.5rem; margin-bottom: 40px;">Discover the power of Aloe Vera.</p>
+            <a href="shop.html" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured" style="padding: 100px 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 60px; font-size: 2.5rem;" class="fade-in">Best Sellers</h2>
+            <div class="product-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                <!-- Products will be injected here by JS or hardcoded for now -->
+                <div class="product-card fade-in"
+                    style="border: 1px solid #eee; padding: 20px; text-align: center; transition: transform 0.3s;">
+                    <div
+                        style="height: 250px; background-color: #f9f9f9; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/aloe-vera-gel.jpg" alt="Aloe Vera Gel" style="max-height: 80%;">
+                    </div>
+                    <h3>Aloe Vera Gel</h3>
+                    <p style="color: var(--primary-color); font-weight: bold; margin: 10px 0;">€28.50</p>
+                    <button class="btn-outline" onclick="addToCart(1)">Add to Cart</button>
+                </div>
+
+                <div class="product-card fade-in"
+                    style="border: 1px solid #eee; padding: 20px; text-align: center; transition: transform 0.3s;">
+                    <div
+                        style="height: 250px; background-color: #f9f9f9; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/toothgel.jpg" alt="Forever Bright Toothgel" style="max-height: 80%;">
+                    </div>
+                    <h3>Forever Bright Toothgel</h3>
+                    <p style="color: var(--primary-color); font-weight: bold; margin: 10px 0;">€9.50</p>
+                    <button class="btn-outline" onclick="addToCart(2)">Add to Cart</button>
+                </div>
+
+                <div class="product-card fade-in"
+                    style="border: 1px solid #eee; padding: 20px; text-align: center; transition: transform 0.3s;">
+                    <div
+                        style="height: 250px; background-color: #f9f9f9; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+                        <img src="images/propolis-creme.jpg" alt="Aloe Propolis Creme" style="max-height: 80%;">
+                    </div>
+                    <h3>Aloe Propolis Creme</h3>
+                    <p style="color: var(--primary-color); font-weight: bold; margin: 10px 0;">€22.75</p>
+                    <button class="btn-outline" onclick="addToCart(3)">Add to Cart</button>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="shop.html" class="btn">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Teaser -->
+    <section class="about-teaser" style="background-color: var(--secondary-bg); padding: 100px 0;">
+        <div class="container" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+            <div class="content fade-in" style="flex: 1; min-width: 300px;">
+                <h2 style="margin-bottom: 20px; font-size: 2.5rem;">From Plant to Product to You</h2>
+                <p style="margin-bottom: 30px; color: #555;">We own the aloe fields, manufacturing facilities, research
+                    and development, quality control laboratories and even our own distribution channels. Everything
+                    from plant to product to you.</p>
+                <a href="about.html" class="btn-outline">Learn More</a>
+            </div>
+            <div class="image fade-in" style="flex: 1; min-width: 300px; height: 400px; background-color: #ddd;">
+                <img src="images/about-teaser.jpg" alt="Aloe Fields"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Forever Living</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Forever Living Products. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
